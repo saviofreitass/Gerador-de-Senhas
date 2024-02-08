@@ -1,0 +1,274 @@
+body{
+    background-color: #f8fafd;
+    font-family: "Inter", sans- serif;
+    color: #252525;
+    padding: 2rem;
+}
+
+main{
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    padding-bottom: 3rem;
+    margin-top: 30px;
+}
+
+.hero .title{
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 1.5rem;
+}
+
+.hero .subtitle {
+    font-size: 1.125rem;
+    color: #828282;
+}
+
+.box {
+    background: #fff; /*cor de fundo */
+    box-shadow: 0 1px 2px; /*sombra da box */
+    border-radius: 8px; /*arredondamento da box*/
+    margin-bottom: 3rem; /*espaço ao elemento abaixo */ 
+}
+
+.password {
+    display: flex; /*coloca todos os elementos da div password na msm linha */
+    align-items: center; /* centraliza na vertical*/
+    padding: 1rem 1.5rem; /* descola das beiradas*/
+}
+
+.password .text{
+    flex: 1; /*estica os elementos(que por conta do display: flex estao na msm linha) na tela toda*/
+}
+
+.password .text input{ /*para pegar apenas o input*/
+    font-family: "Inconsolata", serif; /* fonte usada, devemos ir no google fonts*/
+    font-size: 3rem; /* tamanho*/
+    border: none;  /*tira a borda da caixa de digitacao*/
+    outline: none; /* tira a borda tb*/
+    cursor: default; /* tira o cursos de texto*/
+    height: 52px; /* altura da caixa*/
+    width: 100%; /* largura cresce junto com a senha//nao corta a senha // mostra o final*/
+    transition: all 0.2s; /* nao sei*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; /*tira o select do usuario*/
+}
+
+.password .text input.font-sm{ /*fonte pequena*/
+    font-size: 2.1rem;
+}
+.password .text input.font-xsm{ /*fonte extra pequena*/
+    font-size: 1.68rem;
+}
+.password .text input.font-xxsm{ /*fonte extra extra pequena*/
+    font-size: 1.16rem;
+}
+
+.password .password-length button{
+    background-color: transparent;
+    cursor: pointer; /*coloca maozinha quando coloca em cima*/
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    border: none;
+
+}
+
+.security-indicator {
+    height: 10px;
+    background-color: #ddd;
+    border-bottom-left-radius: 8px; /*arredonda*/
+    border-bottom-right-radius: 8px;
+}
+
+.security-indicator .bar{
+    height: 10px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px; /*arredonda*/
+    border-bottom-right-radius: 8px;
+    transition: all 0.2s; /*qualquer efeito colocado, demora 0.2s para ser executado*/
+}
+
+.security-indicator .bar.completed{
+    border-top-right-radius: 0; /*como no scopo acima foi deixado as pontas arredondadas
+                                  aqui se tira o arredondamento da parte de cima a direita
+                                  para encaixar direitinho*/
+}
+
+.security-indicator .bar.critical{
+    background-color: #FF0000;
+}
+
+.security-indicator .bar.warning{
+    background-color: #f2c94c;
+}
+
+.security-indicator .bar.safe{
+    background-color: #27ae60;
+}
+
+.customize{
+    padding: 1rem 1.5rem;
+}
+
+.customize .title{
+    border-bottom: 1px solid #000000; /*bordinha embaixo com 1px de espessura*/
+    font-size: 1.75rem; 
+    font-weight: bold; /*espessura da font*/
+    margin-bottom: 2rem; /*espaço para o elemento de baixo*/
+    padding-bottom: 0.5rem; /*distancia para qualquer coisa abaixo EX: bordinha preta*/
+    text-align: center;
+}
+
+.customize .actions{
+    display: flex; /*coloca o . config e o .password-legth na msm linha*/
+    gap: 3rem;  /*distancia de um pro outro*/
+    color: #828282;
+}
+
+.customize .password-length {
+    flex: 1; /*estica os elementos pela tela toda, nesse caso a barrinha de tamanho*/
+}
+
+.customize .password-length .slider{
+    appearance: none; /*deixa transparente*/
+    -webkit-appearance: none;
+    height: 10px; /*altura*/
+    background: #dddddd; /*cor do fundo*/
+    outline: none; /*tira borda*/
+    border-radius: 8px; /*arredonda*/
+    width: 100%; /*ocupa todo espaço destinado ao elemento, desde que nada impeça*/
+    opacity: 0.7; /*nivel de opacidade*/
+    transition: opacity 0.2s; 
+    margin-top: 1rem; /*espaço para o elemento acima*/
+}
+
+.customize .password-length .slider:hover{
+    opacity: 1;
+}
+
+.customize .password-length .slider::-webkit-slider-thumb{ /*personalização da bolinha, webkit é o render do google*/
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 25px; /*deixa a pelota redonda, ela vem quadrada*/
+    background: #9b51e0;
+    cursor: pointer;
+}
+
+.customize .password-length .slider::-moz-range-thumb{ /*msm coisa de cima, porem para quem usa mozzila firefox*/
+    width: 20px;
+    height: 20px;
+    border-radius: 25px;
+    background: #9b51e0;
+    cursor: pointer;
+}
+
+.checkbox-container{
+    display: block;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkbox-container input{ /*apaga a caixa de check*/
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-container .checkmark{ /*recria uma caixa de check*/
+    position: absolute;
+    top: 0;
+    left: 0; /*faz ficar a esquerda da escrita*/
+    height: 25px;
+    width: 25px;
+    background-color: #dddddd;
+    transition: all 0.2s;
+}
+
+.checkbox-container:hover input ~ .checkmark{ /*se nao fizer nada (input padrao), fica dessa cor*/
+    background-color: #cccccc; /*quando coloca mouse em cima muda para essa cor um pouco mais escura*/
+}
+
+.checkbox-container input:checked ~ .checkmark{ /*se checkar fica dessa*/
+    background-color: #9b51e0;
+}
+
+.checkbox-container .checkmark:after{ /*cria o V do check*/
+    content: "";
+    display: none;
+    position: absolute;
+    /*dq para baixo cria o V*/
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container input:checked ~ .checkmark:after{
+    display: block;
+}
+
+.button{
+    text-align: center;
+}
+
+.button button{
+    background-color: #bb6bd9;
+    width: 120px;
+    height: 45px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 8px;
+}
+
+.button button:hover{
+    background-color: #9b51e0;
+}
+
+@media only screen and (max-width: 480px){
+    .box{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 85%;
+    }
+    .password{
+        padding: 1rem;
+    }
+    .password .text .input{
+       font-size: 1.5rem;
+    }
+    .password .text input.font-sm{ 
+        font-size: 1.2rem;
+    }
+    .password .text input.font-xsm{
+        font-size: 1rem;
+    }
+    .password .text input.font-xxsm{ 
+        font-size: 1rem;
+    }
+    .password .actions img{
+        width: 24px;
+    }
+}
